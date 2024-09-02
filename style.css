@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'Calibri';
+  src: url('./calibri.ttf');
+}
+
+body{
+  font-family: 'Calibri';
+  color: white;
+  background-color: rgb(0, 0, 100);
+}
+
+a{
+  color: white;
+}
+
+.title{
+  font-size: 72px;
+}
+
+a.nodecoration{
+  text-decoration: none;
+}
+
+#musics .music{
+  background-color: rgb(0, 0, 75);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  margin: 15px;
+}
+
+.music .miniature img{
+  width: 300px;
+}
+
+#downloads a{
+  text-decoration: none;
+}
+
+#downloads, #downloads .button{
+  display: flex;
+}
+
+#downloads .button{
+  align-items: center;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  border-width: 5px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+#downloads .button.midi{
+  background-color: #bcbcbc;
+  color: black;
+  border-color: grey;
+}
+
+#downloads .button.pdf{
+  background-color: white;
+  color: black;
+  border-color: red;
+}
+
+#downloads .button.MuseScore{
+  background-color: #d9d5e5;
+  color: black;
+  border-color: #2a1180;
+}
+
+#downloads .button.audio{
+  background-color: white;
+  color: black;
+  border-color: #e4e4e4;
+}
+
+#downloads .button img{
+  height: 50px;
+}
