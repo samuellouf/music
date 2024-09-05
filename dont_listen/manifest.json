@@ -13,5 +13,6 @@
     "pdf": true,
     "musescore": true,
     "audio": true
-  }
+  },
+  "iframe": "https://www.youtube.com/embed/F6eJbSDFH2M?si=5kzU4SQiX7tejjax"
 }

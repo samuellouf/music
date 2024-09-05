@@ -80,6 +80,19 @@ async function loadMusicInfo(){
     madeby.innerHTML = 'Made by :' + link;
   }
   text.appendChild(madeby);
+
+  if (window.manifest.iframe){
+    let iframe = document.createElement('iframe');
+    iframe.style.width = 560;
+    iframe.style.height = 315;
+    iframe.src = window.manifest.iframe;
+    iframe.title = "YouTube video player";
+    iframe.frameBorder = '0';
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.allowFullscreen = true;
+  }
+
   const generateDownloadButton = (type) => {
     var src = '../';
     var func = null;
