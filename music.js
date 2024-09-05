@@ -91,6 +91,7 @@ async function loadMusicInfo(){
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
     iframe.referrerPolicy = "strict-origin-when-cross-origin";
     iframe.allowFullscreen = true;
+    main.appendChild(iframe);
   }
 
   const generateDownloadButton = (type) => {
