@@ -81,7 +81,7 @@ async function loadMusicInfo(){
   }
   text.appendChild(madeby);
 
-  if (window.manifest.iframe){
+  if (window.manifest.ytid){
     let iframe = document.createElement('iframe');
     iframe.style.width = 560;
     iframe.style.height = 315;
