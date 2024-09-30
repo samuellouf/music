@@ -85,7 +85,7 @@ async function loadMusicInfo(){
     let iframe = document.createElement('iframe');
     iframe.style.width = 560;
     iframe.style.height = 315;
-    iframe.src = window.manifest.iframe;
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + window.manifest.ytid;
     iframe.title = "YouTube video player";
     iframe.frameBorder = '0';
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
