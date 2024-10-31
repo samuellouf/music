@@ -20,7 +20,7 @@
   <script>
 async function main(){
   try {
-    var manifest = await fetch('./manifest.json');
+    var manifest = await fetch('./manifest.json').then((r) => r.json());
   } catch (e) {
     var manifest = {name: '404'};
   }
@@ -33,6 +33,8 @@ async function main(){
     document.querySelector('#fourofour').style.display = 'none';
   }
 }
+
+main();
   </script>
 </body>
 </html>
