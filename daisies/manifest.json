@@ -1,0 +1,17 @@
+{
+  "id": "daisies",
+  "name": "Daisies",
+  "description": "A remake of Daisies.",
+  "isRemake": true,
+  "original": [
+    { "name": "Jakeneutron", "url": "https://www.youtube.com/@BlackGryph0n" },
+    { "name": "Baasik", "url": "https://www.youtube.com/@Baasikmusic" }
+  ],
+  "files": {
+    "midi": true,
+    "pdf": true,
+    "musescore": true,
+    "audio": true
+  },
+  "ytid": ""
+}

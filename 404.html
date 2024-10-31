@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My music</title>
+  <link rel="stylesheet" href="https://samuellouf.github.io/music/style.css"/>
+</head>
+<body>
+  <div id="page">
+    <div id="main"></div>
+    <div id="downloads">
+    </div>
+  </div>
+  <div id="fourofour">
+    <h1 align="center">Error 404 :</h1>
+    <p align="center">Page not found</p>
+  </div>
+  <script src="https://samuellouf.github.io/music/music.js"></script>
+  <script>
+async function main(){
+  try {
+    var manifest = await fetch('./manifest.json');
+  } catch (e) {
+    var manifest = {};
+  }
+  
+  document.title = 'My music - ' + (manifest['name'] || '404');
+  
+  if (manifest['name']){
+    document.querySelector('#fourofour').style.display = 'none';
+  } else {
+    document.querySelector('#page').style.display = 'none';
+  }
+}
+  </script>
+</body>
+</html>
