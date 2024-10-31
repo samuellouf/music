@@ -22,15 +22,15 @@ async function main(){
   try {
     var manifest = await fetch('./manifest.json');
   } catch (e) {
-    var manifest = {};
+    var manifest = {name: '404'};
   }
   
-  document.title = 'My music - ' + (manifest['name'] || '404');
+  document.title = 'My music - ' + manifest['name'];
   
-  if (manifest['name']){
-    document.querySelector('#fourofour').style.display = 'none';
-  } else {
+  if (manifest['name'] == '404'){
     document.querySelector('#page').style.display = 'none';
+  } else {
+    document.querySelector('#fourofour').style.display = 'none';
   }
 }
   </script>
