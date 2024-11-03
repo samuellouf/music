@@ -95,7 +95,7 @@ async function loadMusicInfo(){
   }
 
   const generateDownloadButton = (type) => {
-    var src = '../';
+    var src = 'https://samuellouf.github.io/music/';
     var func = null;
     var text = '';
     switch (type){
