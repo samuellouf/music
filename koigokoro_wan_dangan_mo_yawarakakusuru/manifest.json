@@ -4,7 +4,7 @@
   "description": "A MIDI version of \"Koigokoro wa Dangan mo Yawarakakusuru\" from the anime \"Nichijou\".",
   "isRemake": true,
   "original": [
-    { "name": "Yuji Nomi", "url": "hhttps://open.spotify.com/intl-fr/artist/2ItyqN4i9lNz49g421p0Cl" }
+    { "name": "Yuji Nomi", "url": "https://open.spotify.com/intl-fr/artist/2ItyqN4i9lNz49g421p0Cl" }
   ],
   "files": {
     "midi": true,
