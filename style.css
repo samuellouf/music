@@ -17,6 +17,22 @@ a{
   font-size: 72px;
 }
 
+body[under="350"] .title, body[under="450"] .title {
+  font-size: 32px;
+}
+
+body[under="570"] .title, body[under="650"] .title {
+  font-size: 48px;
+}
+
+body[under="750"] .title, body[under="840"] .title, body[under="1080"] .title {
+  font-size: 64px;
+}
+
+body[over="1080"] .title {
+  font-size: 72px;
+}
+
 a.nodecoration{
   text-decoration: none;
 }
@@ -38,11 +54,39 @@ a.nodecoration{
   width: 300px;
 }
 
+body[under="350"] iframe {
+  height: 200px;
+}
+
+body[under="450"] iframe {
+  height: 250px;
+}
+
+body[under="570"] iframe {
+  height: 300px;
+}
+
+body[under="650"] iframe {
+  height: 350px;
+}
+
+body[under="750"] iframe {
+  height: 420px;
+}
+
+body[under="840"] iframe {
+  height: 500px;
+}
+
+body[under="1080"] iframe {
+  height: 600px;
+}
+
 #downloads a{
   text-decoration: none;
 }
 
-#downloads, #downloads .button{
+body:not(.mobile) #downloads, #downloads .button{
   display: flex;
 }
 

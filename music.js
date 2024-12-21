@@ -87,6 +87,53 @@ function loadMusic(music) {
   document.querySelector('#musics').appendChild(mainlink);
 }
 
+function refreshResolution(){
+  if (window.innerWidth < 1080){
+    document.body.removeAttribute('over');
+  }
+
+  if (window.innerWidth < 350) {
+    document.body.classList.add('mobile');
+    document.body.setAttribute('under', '350');
+  } else if (window.innerWidth < 450) {
+    document.body.classList.add('mobile');
+    document.body.setAttribute('under', '450');
+  } else if (window.innerWidth < 570) {
+    document.body.classList.add('mobile');
+    document.body.setAttribute('under', '570');
+  } else if (window.innerWidth < 650) {
+    document.body.classList.add('mobile');
+    document.body.setAttribute('under', '650');
+  } else if (window.innerWidth < 750) {
+    document.body.classList.add('mobile');
+    document.body.setAttribute('under', '750');
+  } else if (window.innerWidth < 750) {
+    document.body.classList.add('mobile');
+    document.body.setAttribute('under', '750');
+  } else if (window.innerWidth < 840) {
+    document.body.classList.remove('mobile');
+    document.body.setAttribute('under', '840');
+  } else if (window.innerWidth < 1020) {
+    document.body.classList.remove('mobile');
+    document.body.setAttribute('under', '1020');
+  } else if (window.innerWidth < 1080) {
+    document.body.classList.remove('mobile');
+    document.body.setAttribute('under', '1080');
+  } else if (window.innerWidth >= 1080) {
+    document.body.classList.remove('mobile');
+    document.body.setAttribute('over', '1080');
+    document.body.removeAttribute('under');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  refreshResolution();
+}); 
+
+window.addEventListener('resize', () => {
+  refreshResolution();
+}); 
+
 async function loadMusicInfo(){
   let main = document.querySelector('#main');
   let downloads = document.querySelector('#downloads');
