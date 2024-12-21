@@ -54,6 +54,10 @@ a.nodecoration{
   width: 300px;
 }
 
+iframe {
+  width: 100%;
+}
+
 body[under="350"] iframe {
   height: 200px;
 }
