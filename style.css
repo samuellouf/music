@@ -26,7 +26,12 @@ a.nodecoration{
   border-radius: 15px;
   padding: 20px;
   display: flex;
+  align-items: center;
   margin: 15px;
+}
+
+.music .miniature{
+  padding: 30px;
 }
 
 .music .miniature img{
