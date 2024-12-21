@@ -36,14 +36,14 @@ function loadMusic(music) {
   main.classList.add('music');
   mainlink.appendChild(main);
 
-  mainlink.href = './' + music.id;
+  mainlink.href = 'https://samuellouf.github.io/music/' + music.id;
   
   let miniature_div = document.createElement('div');
   miniature_div.classList.add('miniature');
   main.appendChild(miniature_div);
 
   let miniature = document.createElement('img');
-  miniature.src = './' + music.id + '/miniature.png';
+  miniature.src = 'https://samuellouf.github.io/music/' + music.id + '/miniature.png';
   miniature_div.appendChild(miniature);
 
   let text = document.createElement('div');
