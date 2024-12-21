@@ -37,7 +37,7 @@
   <script>
 async function main(){
   try {
-    var manifest = await fetch('http://localhost:2000/steven_universe/manifest.json').then((r) => r.json());
+    var manifest = await fetch('./manifest.json').then((r) => r.json());
   } catch (e) {
     var manifest = {name: '404'};
   }
