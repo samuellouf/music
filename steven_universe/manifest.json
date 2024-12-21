@@ -1,0 +1,11 @@
+{
+  "id": "steven_universe",
+  "name": "Steven Universe - The Movie OST",
+  "description": "Midi remakes of musics from \"Steven Universe - The Movie\".",
+  "isRemake": true,
+  "original": [
+    { "name": "Cartoon Network", "url": "https://www.youtube.com/@cartoonnetwork" },
+    { "name": "Steven Universe", "url": "https://www.youtube.com/@stevenuniverse4066" }
+  ],
+  "type": "playlist"
+}

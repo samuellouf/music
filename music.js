@@ -24,9 +24,70 @@ async function downloadFromURL(url, filename){
   }
 }
 
-async function loadMusicInfo(){
-  window.manifest = await fetch('./manifest.json').then((r) => r.json());
+async function getMusicData(id){
+  let musics = await fetch('../' + id + '/manifest.json').then((r) => r.json());
+  return musics;
+}
 
+function loadMusic(music) {
+  let mainlink = document.createElement('a');
+  mainlink.classList.add('nodecoration');
+  let main = document.createElement('div');
+  main.classList.add('music');
+  mainlink.appendChild(main);
+
+  mainlink.href = './' + music.id;
+  
+  let miniature_div = document.createElement('div');
+  miniature_div.classList.add('miniature');
+  main.appendChild(miniature_div);
+
+  let miniature = document.createElement('img');
+  miniature.src = './' + music.id + '/miniature.png';
+  miniature_div.appendChild(miniature);
+
+  let text = document.createElement('div');
+  text.classList.add('text');
+  main.appendChild(text);
+
+  let title = document.createElement('h1');
+  title.innerText = music.name;
+  text.appendChild(title);
+
+  let description = document.createElement('h2');
+  description.innerText = music.description;
+  text.appendChild(description);
+
+  let madeby = document.createElement('p');
+  var link = ' <a href="https://www.youtube.com/@SamuelLouf">SamuelLouf</a>';
+  if (music.isRemake){
+    let original = document.createElement('p');
+    original.innerText = 'Original by :\ ';
+    for (var artist of music.original){
+      if (typeof artist == 'string'){
+        original.innerText += artist;
+      } else {
+        let a = document.createElement('a');
+        a.innerText = artist.name;
+        a.href = artist.url;
+        original.appendChild(a);
+      }
+      
+      if (music.original.indexOf(artist) != (music.original.length - 1)){
+        original.innerHTML += ',\ ';
+      }
+    }
+    text.appendChild(original);
+    madeby.innerHTML = 'Remake by :' + link;
+  } else {
+    madeby.innerHTML = 'Made by :' + link;
+  }
+  text.appendChild(madeby);
+   
+  document.querySelector('#musics').appendChild(mainlink);
+}
+
+async function loadMusicInfo(){
   let main = document.querySelector('#main');
   let downloads = document.querySelector('#downloads');
 
@@ -160,6 +221,28 @@ async function loadMusicInfo(){
   }
 }
 
+async function getMusicsFromPlaylist(id){
+  let musics = await fetch('../musics.json').then((r) => r.json());
+  return musics.filter((e) => e.startsWith(id + '/'));
+}
+
+async function loadPlaylistInfo() {
+  document.querySelector('#playlist .title').innerText = manifest['name'];
+  document.querySelector('#playlist .description').innerText = manifest['description'];
+  for (var music of (await getMusicsFromPlaylist(manifest['id']))){
+    loadMusic(await getMusicData(music));
+  }
+}
+
+async function loadInfo(){
+  window.manifest = await fetch('./manifest.json').then((r) => r.json());
+  if (manifest['type'] == 'playlist'){
+    loadPlaylistInfo();
+  } else {
+    loadMusicInfo();
+  }
+}
+
 window.onload = function() {
   window.downloadMIDI = () => {
     downloadFromURL('./midi_file.mid', manifest.name + '.mid');
@@ -177,5 +260,5 @@ window.onload = function() {
     downloadFromURL('./audio_file.wav', manifest.name + '.wav');
   }
 
-  loadMusicInfo();
+  loadInfo();
 }

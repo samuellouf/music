@@ -11,21 +11,42 @@
     <div id="main"></div>
     <div id="downloads">
     </div>
+    <div id="playlist">
+      <h1 class="title"></h1>
+      <p class="description"></p>
+      <div id="musics">
+        <!-- <div class="music">
+          <div class="miniature">
+            <img src="./dont_listen/miniature.png">
+          </div>
+          <div class="text">
+            <h1>Don't Listen</h1>
+            <h2>A remake of Don't Listen.</h2>
+            <p>Original by : <a href="link">Someone</a></p>
+            <p>Remake by : <a href="s">SamuelLouf</a></p>
+          </div>
+        </div> -->
+      </div>
+    </div>
   </div>
   <div id="fourofour">
     <h1 align="center">Error 404 :</h1>
     <p align="center">Page not found</p>
   </div>
-  <script src="https://samuellouf.github.io/music/music.js"></script>
+  <script src="../music.js"></script>
   <script>
 async function main(){
   try {
-    var manifest = await fetch('./manifest.json').then((r) => r.json());
+    var manifest = await fetch('http://localhost:2000/steven_universe/manifest.json').then((r) => r.json());
   } catch (e) {
     var manifest = {name: '404'};
   }
   
-  document.title = 'My music - ' + manifest['name'];
+  if (manifest['type'] == 'playlist') {
+    document.title = manifest['name'] + ' [PLAYLIST]';
+  } else {
+    document.title = 'My music - ' + manifest['name'];
+  }
   
   if (manifest['name'] == '404'){
     document.querySelector('#page').style.display = 'none';
