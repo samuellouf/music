@@ -66,7 +66,7 @@ musics.forEach(loadMusic);
 
 document.addEventListener('DOMContentLoaded', async function () {
   musics_ids = await fetch('./musics.json').then((r) => r.json());
-  for (var id of musics_ids){
+  for (var id of musics_ids.filter((id) => !id.includes('/'))){
     var manifest = await fetch('./' + id + '/manifest.json').then((r) => r.json());
     musics.push(manifest);
     loadMusic(manifest);
