@@ -82,7 +82,11 @@ body[under="840"] iframe {
   height: 500px;
 }
 
-body[under="1080"] iframe {
+body[under="1020"] iframe, body[under="1080"] iframe {
+  height: 600px;
+}
+
+body[over="1080"] iframe {
   height: 600px;
 }
 
