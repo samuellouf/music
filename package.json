@@ -1,0 +1,25 @@
+{
+  "name": "music",
+  "version": "1.0.0",
+  "description": "All the music I (re)make.",
+  "homepage": "https://github.com/samuellouf/music#readme",
+  "bugs": {
+    "url": "https://github.com/samuellouf/music/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuellouf/music.git"
+  },
+  "license": "MIT",
+  "author": "SamuelLouf",
+  "type": "commonjs",
+  "main": "music.js",
+  "scripts": {
+    "build": "node build.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}

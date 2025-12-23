@@ -135,33 +135,8 @@ window.addEventListener('resize', () => {
 }); 
 
 async function loadMusicInfo(){
-  let main = document.querySelector('#main');
+  let text = document.querySelector('#main .text');
   let downloads = document.querySelector('#downloads');
-
-  let title = document.createElement('h1');
-  title.setAttribute('align', 'center');
-  title.classList.add('title');
-  title.innerText = manifest.name;
-  main.appendChild(title);
-
-  let music = document.createElement('div');
-  music.classList.add('music');
-  main.appendChild(music);
-
-  let miniature_div = document.createElement('div');
-  miniature_div.classList.add('miniature');
-  music.appendChild(miniature_div);
-
-  let miniature = document.createElement('img');
-  miniature.src = './miniature.png';
-  miniature_div.appendChild(miniature);
-  
-  let text = document.createElement('div');
-  main.appendChild(text);
-
-  let desc = document.createElement('h2');
-  desc.innerText = manifest.description;
-  text.appendChild(desc);
 
   let madeby = document.createElement('p');
   var link = ' <a href="https://www.youtube.com/@SamuelLouf">SamuelLouf</a>';
@@ -188,22 +163,8 @@ async function loadMusicInfo(){
     madeby.innerHTML = 'Made by :' + link;
   }
   text.appendChild(madeby);
-
-  if (window.manifest.ytid){
-    let iframe = document.createElement('iframe');
-    iframe.style.width = 560;
-    iframe.style.height = 315;
-    iframe.src = 'https://www.youtube-nocookie.com/embed/' + window.manifest.ytid;
-    iframe.title = "YouTube video player";
-    iframe.frameBorder = '0';
-    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-    iframe.referrerPolicy = "strict-origin-when-cross-origin";
-    iframe.allowFullscreen = true;
-    main.appendChild(iframe);
-  }
-
   const generateDownloadButton = (type) => {
-    var src = 'https://samuellouf.github.io/music/';
+    var src = 'https://samuellouf.github.io/music/assets/';
     var func = null;
     var text = '';
     switch (type){
