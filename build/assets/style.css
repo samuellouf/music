@@ -1,0 +1,138 @@
+@font-face {
+  font-family: 'Calibri';
+  src: url('./calibri.ttf');
+}
+
+body{
+  font-family: 'Calibri';
+  color: white;
+  background-color: rgb(0, 0, 100);
+}
+
+a{
+  color: white;
+}
+
+.title{
+  font-size: 72px;
+}
+
+body[under="350"] .title, body[under="450"] .title {
+  font-size: 32px;
+}
+
+body[under="570"] .title, body[under="650"] .title {
+  font-size: 48px;
+}
+
+body[under="750"] .title, body[under="840"] .title, body[under="1080"] .title {
+  font-size: 64px;
+}
+
+body[over="1080"] .title {
+  font-size: 72px;
+}
+
+a.nodecoration{
+  text-decoration: none;
+}
+
+#musics .music{
+  background-color: rgb(0, 0, 75);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin: 15px;
+}
+
+.music .miniature{
+  padding: 30px;
+}
+
+.music .miniature img{
+  width: 300px;
+}
+
+iframe {
+  width: 100%;
+}
+
+body[under="350"] iframe {
+  height: 200px;
+}
+
+body[under="450"] iframe {
+  height: 250px;
+}
+
+body[under="570"] iframe {
+  height: 300px;
+}
+
+body[under="650"] iframe {
+  height: 350px;
+}
+
+body[under="750"] iframe {
+  height: 420px;
+}
+
+body[under="840"] iframe {
+  height: 500px;
+}
+
+body[under="1020"] iframe, body[under="1080"] iframe {
+  height: 600px;
+}
+
+body[over="1080"] iframe {
+  height: 600px;
+}
+
+#downloads a{
+  text-decoration: none;
+}
+
+body:not(.mobile) #downloads, #downloads .button{
+  display: flex;
+}
+
+#downloads .button{
+  align-items: center;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  border-width: 5px;
+  border-style: solid;
+  cursor: pointer;
+}
+
+#downloads .button.midi{
+  background-color: #bcbcbc;
+  color: black;
+  border-color: grey;
+}
+
+#downloads .button.pdf{
+  background-color: white;
+  color: black;
+  border-color: red;
+}
+
+#downloads .button.MuseScore{
+  background-color: #d9d5e5;
+  color: black;
+  border-color: #2a1180;
+}
+
+#downloads .button.audio{
+  background-color: white;
+  color: black;
+  border-color: #e4e4e4;
+}
+
+#downloads .button img{
+  height: 50px;
+}
