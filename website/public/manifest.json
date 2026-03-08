@@ -1,0 +1,27 @@
+{
+  "name": "My Music – samuellouf",
+  "short_name": "Music",
+  "dir": "ltr",
+  "lang": "en",
+  "display": "browser",
+  "background_color": "#000064",
+  "description": "The music I make and remake.",
+  "id": "music.samuellouf.github",
+  "url": "https://samuellouf.github.io/music/",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web"
+    },
+    {
+      "platform": "spotify",
+      "url": ""
+    }
+  ]
+}

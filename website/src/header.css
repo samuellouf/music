@@ -1,0 +1,10 @@
+#header{
+  display: flex;
+  background-color: #2424f7;
+  color: white;
+  height: 100px;
+}
+
+#header img, #header h1{
+  cursor: pointer;
+}
